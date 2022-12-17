@@ -4,8 +4,6 @@ import axios from 'axios';
 import Joi from 'joi';
 import { useNavigate } from 'react-router-dom';
 import Show from '../Show/Show';
-import Login from '../Login/Login';
-// import * as Yup from 'yup';
 export default function Register() {
   let [validationError, setvalidationError] = useState([]);
   let [apiError, setapiError] = useState(null);
@@ -25,21 +23,18 @@ export default function Register() {
     currentUser[e.target.name] = e.target.value;
     setUser(currentUser)
   }
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user])
 
   async function register(e) {
     e.preventDefault();
     if (vaildation()) {
       setisLoading(true)
-      let { data } = await axios.post(`https://routeegypt.herokuapp.com/signup`, user);
+      let { data } = await axios.post(`https://sticky-note-fe.vercel.app/signup`, user);
       console.log(data);
     
 if(data.message == "success"){
   setisLoading(false);
 setapiError(null);
-Navigate('/')
+Navigate("/ ");
 }else{
   setapiError(data.message)
   setisLoading(false)
@@ -72,7 +67,6 @@ Navigate('/')
       password: Joi
         .string()
         .required()
-        .pattern(new RegExp(/^[a-z][0-9]/)),
     });
     let res = schema.validate(user, { abortEarly: false });
     console.log(res);
@@ -145,7 +139,8 @@ Navigate('/')
             <div className={validationError.filter(ele =>ele.context.label=="email")[0]?"alert alert-danger" :""}>
             {validationError.filter(ele =>ele.context.label=="email")[0]?.message}
             
-            </div>              <div className="input-data my-2">
+            </div> 
+                         <div className="input-data my-2">
               <label htmlFor="password">Password</label>
               <input
                 type="password"

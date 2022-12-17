@@ -4,7 +4,6 @@ import Moives from "./Component/Moives/Moives";
 import Home from "./Component/Home/Home";
 import Register from "./Component/Register/Register";
 import Login from "./Component/Login/Login";
-import People from "./Component/People/People"
 import Details from "./Component/Details/Details";
 import TvShows from "./Component/ShowsOftv/TvShows";
 import { Navigate } from "react-router-dom";
@@ -49,7 +48,6 @@ return <Navigate to="/" />
           <Moives/> 
           </ProtectedRoute>},
         { path: "register", element: <Register/>   },
-        { path: "people", element: <ProtectedRoute><People/></ProtectedRoute>  },
         { path: "tvshow", element: <ProtectedRoute><TvShows/></ProtectedRoute>  },
         // { path: "profile", element:<Profile userData={userData} />},
         { path: "profile", element: <ProtectedRoute><Profile userData={userData}/></ProtectedRoute>  },

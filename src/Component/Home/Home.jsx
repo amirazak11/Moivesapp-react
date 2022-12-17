@@ -4,9 +4,8 @@ import Iteam from '../iteam/Iteam';
 import { Offline } from "react-detect-offline";
 import DetectOffline from '../Offline/Offline';
 import Loader from '../Loader/Loader';
-import Login from '../Login/Login';
-import Show from '../Show/Show';
-export default function Home() {
+
+export default function Home({dataDetail}) {
   let [movies, setmovies] = useState([]);
   let [tv, settv] = useState([]);
   let [isLoader,setisLoader]=useState(true);
@@ -44,7 +43,7 @@ export default function Home() {
               <p className="text-muted">most watched movies by day</p>
 
             </div></div>
-          {movies?.slice(1, 13).map(movie => <Iteam key={movie.id} dataRes={movie} />)}
+            {movies?.slice(1, 13).map(movie => <Iteam key={movie.id} dataRes={movie} />)}
 
 
 
@@ -70,6 +69,7 @@ export default function Home() {
 
 
       </div>
+
     </>
   )
 }

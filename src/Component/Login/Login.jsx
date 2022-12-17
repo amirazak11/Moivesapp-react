@@ -5,7 +5,6 @@ import Joi from 'joi';
 import { useNavigate } from 'react-router-dom';
 import Show from '../Show/Show';
 export default function Login({saveUser}) {
-    console.log({saveUser});
     let [user, setUser] = useState({
       email: "",
       password: ""
@@ -25,12 +24,12 @@ export default function Login({saveUser}) {
     if (vaildation()) {
       setisLoading(true)
       let { data } = await axios.post(   
-     "https://routeegypt.herokuapp.com/signin",
+     "https://sticky-note-fe.vercel.app/signin",
       user);
 if(data.message == "success"){
     localStorage.setItem("token",data.token);
     saveUser();
-    Navigate("/home")
+    Navigate("/home");
   setisLoading(false);
 setapiError(null);
 }else{
@@ -39,30 +38,14 @@ setapiError(null);
 
 }
   }}
-  // function vaildation(){
-  //   let SignupSchema = Yup.object().shape({
-  //     first_name: Yup.string()
-  //       .min(2, 'Too Short!')
-  //       .max(50, 'Too Long!')
-  //       .required('Required'),
-  //     last_name: Yup.string()
-  //       .min(2, 'Too Short!')
-  //       .max(50, 'Too Long!')
-  //       .required('Required'),
-  //     email: Yup.string().email('Invalid email').required('Required'),
-  //     ag: Yup.number.positive().integer().required('Required'),
-  //     password: Yup.string().patern(new RegExp(/^[A-Z][a-z{3,8}]$/)).required('Required')
-  //   });
-  //   let res = SignupSchema.validate(user)
-  //   console.log(res);
-  // }
+
   function vaildation() {
     let schema = Joi.object({
       email: Joi .string() .email({ minDomainSegments:2, tlds:{ allow: false } }),
       password: Joi
         .string()
         .required()
-        .pattern(new RegExp(/^[a-z][0-9]/)),
+    
     });
     let res = schema.validate(user, { abortEarly: false });
     console.log(res);

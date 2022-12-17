@@ -6,7 +6,7 @@ let {userData,logOut} =props;
   return (
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="">Noxe</Link>
+    <div className="navbar-brand" >Noxe</div>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -19,9 +19,7 @@ let {userData,logOut} =props;
           <Link className="nav-link" to="movies">movies</Link>
         </li>
 
-        <li className="nav-item">
-          <Link className="nav-link" to="people">people</Link>
-        </li>
+
         <li className="nav-item">
           <Link className="nav-link" to="tvshow">Tvshows</Link>
         </li>

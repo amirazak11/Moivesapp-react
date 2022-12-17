@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import Home from '../Home/Home';
 export default function Details() {
   let [Details,setDetails]=useState(null)
     let {id ,type} = useParams()
@@ -37,5 +38,9 @@ export default function Details() {
     </div>
   </div>
 </div>
+<div>
+
+</div>
+
 </>  )
 }
