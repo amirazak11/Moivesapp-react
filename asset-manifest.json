@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Moivesapp-react/static/css/main.bf646c55.css",
-    "main.js": "/Moivesapp-react/static/js/main.62363b59.js",
+    "main.js": "/Moivesapp-react/static/js/main.dc054249.js",
     "static/js/787.66f5a8ea.chunk.js": "/Moivesapp-react/static/js/787.66f5a8ea.chunk.js",
     "static/media/fa-solid-900.ttf": "/Moivesapp-react/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/fa-brands-400.ttf": "/Moivesapp-react/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.woff2": "/Moivesapp-react/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
     "index.html": "/Moivesapp-react/index.html",
     "main.bf646c55.css.map": "/Moivesapp-react/static/css/main.bf646c55.css.map",
-    "main.62363b59.js.map": "/Moivesapp-react/static/js/main.62363b59.js.map",
+    "main.dc054249.js.map": "/Moivesapp-react/static/js/main.dc054249.js.map",
     "787.66f5a8ea.chunk.js.map": "/Moivesapp-react/static/js/787.66f5a8ea.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bf646c55.css",
-    "static/js/main.62363b59.js"
+    "static/js/main.dc054249.js"
   ]
 }
