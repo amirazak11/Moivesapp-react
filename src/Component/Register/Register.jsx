@@ -9,7 +9,6 @@ export default function Register() {
   let [apiError, setapiError] = useState(null);
   let [isLoading, setisLoading] = useState(false)
   let Navigate =useNavigate()
-
   let [user, setUser] = useState({
     first_name: "",
     last_name: "",
@@ -27,20 +26,22 @@ export default function Register() {
   async function register(e) {
     e.preventDefault();
     setisLoading(true);
-
     if (vaildation()) {
-      let { data } = await axios.post(`https://sticky-note-fe.vercel.app/signup`, user);
-      console.log(data);
+      setisLoading(false);
+      setapiError(null);
+      Navigate("/home");
+//       let { data } = await axios.post(`https://sticky-note-fe.vercel.app/signup`, user);
+//       console.log(data);
     
-if(data.message == "success"){
-  setisLoading(false);
-setapiError(null);
-Navigate("/ ");
-}else{
-  setapiError(data.message)
-  setisLoading(false)
+// if(data.message == "success"){
+//   setisLoading(false);
+// setapiError(null);
+// Navigate("/ ");
+// }else{
+//   setapiError(data.message)
+//   setisLoading(false)
 
-}
+// }
   }}
 
   function vaildation() {

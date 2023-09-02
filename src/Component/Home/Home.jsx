@@ -43,7 +43,7 @@ export default function Home({dataDetail}) {
               <p className="text-muted">most watched movies by day</p>
 
             </div></div>
-            {movies?.slice(1, 13).map(movie => <Iteam key={movie.id} dataRes={movie} />)}
+            {movies?.slice(1, 13).map(movie => <Iteam key={movie.id} dataRes={movie} isLoader={isLoader} setisLoader={setisLoader} />)}
 
 
 

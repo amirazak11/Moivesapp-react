@@ -24,22 +24,24 @@ export default function Login({saveUser}) {
     e.preventDefault();   
        setisLoading(true)
     if (vaildation()) {
+      setisLoading(false);
       setapiError(null);
-      let { data } = await axios.post(   
-     "https://sticky-note-fe.vercel.app/signin",
-      user);
-if(data.message == "success"){
-  setisLoading(false);
-  navigate("/home");
-    localStorage.setItem("token",data.token);
-    saveUser();
-  setisLoading(false);
-setapiError(null);
-}else{
-  setapiError(data.message)
-  setisLoading(false)
+      navigate("/home");
+//       let { data } = await axios.post(   
+//      "https://sticky-note-fe.vercel.app/signin",
+//       user);
+// if(data.message == "success"){
+//   // setisLoading(false);
+//   // navigate("/home");
+//     localStorage.setItem("token",data.token);
+//     saveUser();
+//   setisLoading(false);
+// setapiError(null);
+// }else{
+//   setapiError(data.message)
+//   setisLoading(false)
 
-}
+// }
   }}
 
   function vaildation() {

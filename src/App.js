@@ -25,11 +25,13 @@ function App() {
     setuserData(decoded)
   } 
   function ProtectedRoute(props){
-    if(localStorage.getItem("token")){
-      return props.children 
-    }else{
-return <Navigate to="/" />
-    }
+          return props.children 
+
+//     if(localStorage.getItem("token")){
+//       return props.children 
+//     }else{
+// return <Navigate to="/" />
+//     }
   }
   function logOut(){
     localStorage.removeItem("token");

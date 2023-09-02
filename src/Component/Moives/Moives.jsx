@@ -4,6 +4,7 @@ import Iteam from '../iteam/Iteam';
 import Login from '../Login/Login';
 export default function Moives() {
   let [movies, setmovies] = useState(null);
+  let [isLoader,setisLoader]=useState(true);
   let pageList = new Array(10).fill("a").map((ele,i)=>i+1)
   async function getTreanding(pagenum) {
     let { data } = await axios.get(
@@ -12,6 +13,8 @@ export default function Moives() {
     console.log(data)
 
     setmovies(data.results)
+    setisLoader(false)
+
   }
   useEffect(() => {
     getTreanding(1);
@@ -47,7 +50,7 @@ export default function Moives() {
     </li>
   </ul>
 </nav>
-          {movies?.map(movie => <Iteam key={movie.id} dataRes={movie} /> )}
+          {movies?.map(movie => <Iteam key={movie.id} dataRes={movie} isLoader={isLoader} /> )}
         </div></div>
       
     </div>

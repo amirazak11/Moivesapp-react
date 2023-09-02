@@ -3,13 +3,15 @@ import axios from "axios";
 import Carousel from 'react-bootstrap/Carousel';
 export default function Show() {
     let [movies, setmovies] = useState(null);
+    
     async function getTreanding() {
       let { data } = await axios.get(
         `https://api.themoviedb.org/3/trending/movie/day?api_key=c636ed7787cc302d96bf88ccf334e0d8`
       );
       console.log(data)
   
-      setmovies(data.results)
+      setmovies(data.results);
+
     }
     useEffect(() => {
       getTreanding();
