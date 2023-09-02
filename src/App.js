@@ -41,7 +41,7 @@ return <Navigate to="/" />
       path: "/",
       element: <Mainlayout userData={userData} logOut={logOut}/>,
       children: [
-        { path: "home", element: <Home/>  },
+        { path: "home", element:<ProtectedRoute> <Home/></ProtectedRoute>  },
         { index: true , element: <Login saveUser={saveUser}/> }, 
         { path: "movies", element: 
         <ProtectedRoute> 

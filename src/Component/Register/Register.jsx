@@ -26,17 +26,16 @@ export default function Register() {
 
   async function register(e) {
     e.preventDefault();
+    setisLoading(true);
+
     if (vaildation()) {
-      setisLoading(false);
-      setapiError(null);
-      Navigate("/ ");
       let { data } = await axios.post(`https://sticky-note-fe.vercel.app/signup`, user);
       console.log(data);
     
 if(data.message == "success"){
-//   setisLoading(false);
-// setapiError(null);
-// Navigate("/ ");
+  setisLoading(false);
+setapiError(null);
+Navigate("/ ");
 }else{
   setapiError(data.message)
   setisLoading(false)
